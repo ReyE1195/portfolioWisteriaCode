@@ -1,0 +1,987 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    background-color: var(--deep-purple);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: var(--deep-purple);
+}
+
+:root {
+    --midnight-violet: #2B0A2B;
+    --royal-purple: #6D016D;
+    --lavender-veil: #E6D5F0;
+    --morning-wisteria: #D4B8E8;
+    --evening-wisteria: #C4A3DC;
+    --dark-magenta: #870887;
+    --tickle-me-amethyst: #B361B3;
+    --deep-purple: #5F0C5F;
+    --velvet-orchid: #6B4282;
+    --wisteria-gold: #D4AF37;
+}
+
+/* Navbar Section */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    background-color: var(--midnight-violet);
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.nav-logo {
+    width: auto;
+    height: 80px;
+    margin-left: 2rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 17px;
+    padding: 15px;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--evening-wisteria);
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: "Libre Caslon Condensed", serif;
+}
+
+.nav-list a:hover {
+    color: var(--lavender-veil);
+    transition: color 0.3s ease;
+}
+
+/* Welcome Section */
+#welcome-section {
+    display: flex;
+    width: 100%;
+    margin-top: 80px;
+    background-color: var(--deep-purple);
+}
+
+.welcome {
+    width: 100%;
+    background-color: var(--deep-purple);
+}
+
+.welcome-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(#000000, var(--deep-purple));
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 2rem 5% 2rem 0;
+    gap: 2rem;
+}
+
+.welcome-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-content h1 {
+    color: var(--morning-wisteria);
+    font-size: 8.2rem;
+    font-family: "Fleur De Leah", sans-serif, cursive;
+    margin-left: 45px;
+    margin-bottom: 1rem;
+}
+
+.welcome-content h3 {
+    color: var(--evening-wisteria);
+    font-size: 45px;
+    font-family: "Libre Caslon Condensed", serif;
+    margin-left: 45px;
+    margin-bottom: 1.5rem;
+}
+
+.welcome-content p {
+    color: var(--morning-wisteria);
+    font-size: 28px;
+    font-family: "Libre Caslon Condensed", serif;
+    width: 75%;
+    max-width: 1000px;
+    margin-left: 45px;
+    line-height: 1.5;
+}
+
+/* Projects Section */
+#projects {
+    width: 100%;
+    min-height: 70vh;
+    background-color: var(--evening-wisteria);
+    padding: 2rem 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.projects-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 2rem 0;
+    justify-content: center;
+}
+
+.project-subheader {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-subheader h2 {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: clamp(2.2rem, 6vw, 5rem); /* scales with screen width: min, preferred, max */
+    background-image: linear-gradient(90deg, var(--tickle-me-amethyst) 11%, var(--deep-purple) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Scroll Wrapper */
+.scroll-wrapper {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border: 3px solid var(--morning-wisteria);
+    border-radius: 50%;
+    background-color: var(--evening-wisteria);
+    color: var(--dark-magenta);
+    font-size: 2.8rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.scroll-btn:hover {
+    background-color: var(--dark-magenta);
+    color: white;
+    transform: scale(1.1);
+}
+
+.scroll-btn:active {
+    transform: scale(0.95);
+}
+
+.scroll-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-color: var(--dark-magenta);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    pointer-events: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-btn-left .scroll-icon {
+    mask-image: url('Images/arrow-left.png');
+    -webkit-mask-image: url('Images/arrow-left.png');
+}
+
+.scroll-btn-right .scroll-icon {
+    mask-image: url('Images/arrow-right.png');
+    -webkit-mask-image: url('Images/arrow-right.png');
+}
+
+.scroll-btn:hover .scroll-icon {
+    background-color: white;
+}
+
+/* Projects Viewport - shows two tiles and hides the rest */
+.project-container-tile {
+    overflow: hidden;
+    padding: 1rem;
+    flex: 1;
+}
+
+/* Projects Track - the row of tiles that slides */
+.project-track {
+    display: flex;
+    gap: 2rem;
+    will-change: transform;
+}
+
+/* Two tiles per view: (total width - 1 gap) / 2 */
+.project-tile {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    width: calc((100% - 2rem) / 2);
+}
+
+.project-tile a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: 3px solid var(--dark-magenta);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project-tile a:hover {
+    color: var(--velvet-orchid);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.project-tile img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5px;
+}
+
+.project-title {
+    margin: 0;
+    text-align: center;
+    font-family: "Libre Caslon Condensed", serif;
+}
+
+.project-desc {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    color: var(--lavender-veil);
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin-top: auto;
+}
+
+.project-tags li {
+    font-size: 0.85rem;
+    font-weight: normal;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    background-color: var(--midnight-violet);
+    color: var(--morning-wisteria);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    width: 100%;
+    min-height: 60vh;
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    background: linear-gradient(var(--deep-purple), var(--midnight-violet));
+}
+
+/* Keeps the section hidden while the "hidden" attribute is on it */
+.testimonials-section[hidden] {
+    display: none;
+}
+
+.testimonials-header h2 {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: clamp(2.2rem, 6vw, 4rem); /* scales with screen width: min, preferred, max */
+    color: var(--morning-wisteria);
+    text-align: center;
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+}
+
+.testimonial-icon {
+    font-size: 2rem;
+    color: var(--wisteria-gold);
+}
+
+.testimonial-quote {
+    flex: 1;
+}
+
+.testimonial-quote p {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--lavender-veil);
+}
+
+.testimonial-credit {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(212, 184, 232, 0.25);
+    font-family: "Libre Caslon Condensed", serif;
+}
+
+.testimonial-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--morning-wisteria);
+}
+
+.testimonial-project {
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--evening-wisteria);
+}
+
+.testimonial-cta {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--morning-wisteria);
+}
+
+.testimonial-cta a {
+    color: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--wisteria-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: color 0.3s ease;
+}
+
+.testimonial-cta a:hover {
+    color: var(--wisteria-gold);
+}
+
+/* Background Wrapper Section */
+.background-wrapper {
+    background-color: var(--deep-purple);
+    background-image: linear-gradient(rgba(43, 10, 43, 0.75), rgba(43, 10, 43, 0.85)),
+    url("Images/Background_Logo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contact Section */
+.contact-section {
+    width: 100%;
+    padding: 6rem 8% 4rem;
+    min-height: 70vh;
+    gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo */
+.geoLogo {
+    width: 100%;
+    max-width: 25rem;
+    height: auto;
+    border-radius: 23px;
+}
+
+.contact-title {
+    font-family: "Libre Caslon Condensed", serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.contact-title h2 {
+    font-family: "Libre Caslon Condensed", serif;
+    color: var(--morning-wisteria);
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.contact-title h3 {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 2rem;
+    color: var(--morning-wisteria);
+}
+
+.schedule-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--wisteria-gold);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+    transition: color 0.3s ease;
+}
+
+.schedule-link:hover {
+    color: var(--wisteria-gold);
+}
+
+.contact-title p:first-of-type {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--morning-wisteria);
+
+}
+
+.contact-title p:last-of-type {
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--morning-wisteria);
+
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.links a {
+    text-decoration: none;
+    color: var(--lavender-veil);
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.links a:hover {
+    color: var(--evening-wisteria);
+    transform: translateY(-3px);
+}
+
+.links i {
+    font-size: 1.6rem;
+    margin-right: 0.5rem;
+}
+
+/* Footer Section */
+footer {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--morning-wisteria);
+    background-color: transparent;
+    width: 100%;
+    font-size: 17px;
+    padding: 0.75rem 2rem;
+}
+
+/* MEDIA QUERIES FOR RESPONSIVE DESIGN Section */
+
+/* Large Desktops (1920px and above) */
+@media screen and (min-width: 1920px) {
+    .welcome-content h1 {
+        font-size: 10rem;
+    }
+
+    .welcome-content h3 {
+        font-size: 55px;
+    }
+
+    .welcome-content p {
+        font-size: 32px;
+        max-width: 1200px;
+    }
+
+    .project-subheader {
+        font-size: 55px;
+    }
+
+    .scroll-wrapper {
+        width: 80%;
+    }
+
+    .project-tile img {
+        height: 300px;
+    }
+
+    .testimonial-container {
+        max-width: 1300px;
+    }
+}
+
+/* Standard Desktops (1440px - 1919px) */
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+    .welcome-content h1 {
+        font-size: 8.2rem;
+    }
+
+    .welcome-content h3 {
+        font-size: 45px;
+    }
+
+    .welcome-content p {
+        font-size: 28px;
+        width: 70%;
+        max-width: 1000px;
+    }
+}
+
+/* Medium Desktops/Large Laptops (1200px - 1439px) */
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .welcome-content h1 {
+        font-size: 7rem;
+        margin-left: 40px;
+    }
+
+    .welcome-content h3 {
+        font-size: 40px;
+        margin-left: 40px;
+    }
+
+    .welcome-content p {
+        font-size: 26px;
+        width: 75%;
+        max-width: 900px;
+        margin-left: 40px;
+    }
+
+    .project-subheader {
+        font-size: 40px;
+    }
+
+    .nav-list a {
+        font-size: 1.4rem;
+    }
+}
+
+/* Standard Laptops (1024px - 1199px) */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .welcome-content h1 {
+        font-size: 6rem;
+        margin-left: 35px;
+    }
+
+    .welcome-content h3 {
+        font-size: 35px;
+        margin-left: 35px;
+    }
+
+    .welcome-content p {
+        font-size: 24px;
+        width: 80%;
+        max-width: 800px;
+        margin-left: 35px;
+    }
+
+    .project-subheader {
+        font-size: 38px;
+    }
+
+    .nav-list a {
+        font-size: 1.3rem;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+    }
+
+    .scroll-wrapper {
+        width: 92%;
+    }
+
+    .project-tile a {
+        max-width: 340px;
+    }
+
+    .project-tile img {
+        height: 230px;
+    }
+}
+
+/* Small Laptops (768px - 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .welcome-content {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 5rem;
+        margin-left: 30px;
+    }
+
+    .welcome-content h3 {
+        font-size: 30px;
+        margin-left: 30px;
+    }
+
+    .welcome-content p {
+        font-size: 22px;
+        width: 85%;
+        max-width: 700px;
+        margin-left: 30px;
+    }
+
+    .nav-list {
+        gap: 1rem;
+        margin: 10px;
+        padding: 10px;
+    }
+
+    .nav-list a {
+        font-size: 1.2rem;
+    }
+
+    .project-subheader {
+        font-size: 35px;
+    }
+
+    .scroll-wrapper {
+        width: 95%;
+    }
+
+    .project-tile a {
+        max-width: 300px;
+        font-size: 1.3rem;
+    }
+
+    .project-tile img {
+        height: 200px;
+    }
+
+    .scroll-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.8rem;
+    }
+
+    .testimonial-quote p {
+        font-size: 1.25rem;
+    }
+
+    .contact-section {
+        min-height: 60vh;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* Tablets and Small Screens (481px - 767px) */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    #welcome-section {
+        margin-top: 70px;
+    }
+
+    .nav-logo {
+        height: 70px;
+        margin-left: 1.5rem;
+    }
+
+    .welcome-content {
+        height: auto;
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 4rem;
+        margin-left: 25px;
+    }
+
+    .welcome-content h3 {
+        font-size: 26px;
+        margin-left: 25px;
+    }
+
+    .welcome-content p {
+        font-size: 20px;
+        width: 90%;
+        margin-left: 25px;
+    }
+
+    .nav-list {
+        gap: 0.8rem;
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .nav-list a {
+        font-size: 1.1rem;
+    }
+
+    .project-subheader {
+        font-size: 30px;
+    }
+
+    .scroll-wrapper {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .project-tile {
+        width: 100%;
+    }
+
+    .project-tile a {
+        width: 100%;
+        font-size: 1.2rem;
+    }
+
+    .project-tile img {
+        height: 150px;
+    }
+
+    .scroll-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
+    }
+
+    #projects {
+        min-height: 60vh;
+    }
+
+    .testimonials-section {
+        min-height: 50vh;
+        padding: 3rem 5%;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial-quote p {
+        font-size: 1.2rem;
+    }
+
+    .testimonial-cta {
+        font-size: 1.2rem;
+    }
+
+    .contact-section {
+        min-height: 50vh;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 1.2rem;
+        text-align: center;
+    }
+}
+
+/* Mobile Devices (up to 480px) */
+@media screen and (max-width: 480px) {
+    #welcome-section {
+        margin-top: 60px;
+    }
+
+    .nav-logo {
+        height: 60px;
+        margin-left: 1rem;
+    }
+
+    .welcome-content {
+        height: auto;
+        min-height: 70vh;
+        padding: 1.5rem 0;
+    }
+
+    .welcome-content h1 {
+        font-size: 3rem;
+        margin-left: 20px;
+    }
+
+    .welcome-content h3 {
+        font-size: 22px;
+        margin-left: 20px;
+    }
+
+    .welcome-content p {
+        font-size: 18px;
+        width: 90%;
+        margin-left: 20px;
+    }
+
+    .nav-list {
+        gap: 0.5rem;
+        margin: 5px;
+        padding: 5px;
+    }
+
+    .nav-list a {
+        font-size: 1rem;
+    }
+
+    .project-subheader {
+        font-size: 26px;
+        margin-bottom: 1rem;
+    }
+
+    .scroll-wrapper {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+    .project-tile {
+        width: 100%;
+    }
+
+    .project-tile a {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+
+    .project-tile img {
+        height: 140px;
+    }
+
+    .scroll-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1.4rem;
+        border: 2px solid var(--morning-wisteria);
+    }
+
+    #projects {
+        min-height: 50vh;
+        padding: 1.5rem 0;
+    }
+
+    .testimonials-section {
+        min-height: 40vh;
+        padding: 2rem 5%;
+        gap: 1.5rem;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .testimonial-card {
+        padding: 1.25rem;
+    }
+
+    .testimonial-quote p {
+        font-size: 1.05rem;
+    }
+
+    .testimonial-name {
+        font-size: 1.1rem;
+    }
+
+    .testimonial-project {
+        font-size: 0.8rem;
+    }
+
+    .testimonial-cta {
+        font-size: 1.05rem;
+    }
+
+    .contact-section {
+        min-height: 40vh;
+        padding: 2rem 5% 9rem;
+        flex-direction: column;
+    }
+
+    .contact-title h2 {
+        font-size: 1.8rem;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .links a {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+}

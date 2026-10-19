@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<!-- NavBar Section -->
+<nav id="navbar" class="navbar-section">
+    <img class="nav-logo" src="Images/Background_CropLogo.png" alt="Wisteria Code Logo">
+    <ul class="nav-list">
+        <li><a href="#welcome-section">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <!-- Uncomment this link when you remove "hidden" from the Testimonials section -->
+        <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Welcome Section -->
+<section id="welcome-section" class="welcome">
+    <div class="welcome-content">
+        <div class="welcome-text">
+            <h1>Hello, I'm Reyna</h1>
+            <h3>A Full-Stack Developer</h3>
+            <p>I build custom websites and web applications for small businesses and individuals, from the design
+                people see to the checkout, accounts, and data behind it. My coding journey started with a
+                conversation with my brother about the life I wanted: building something meaningful while being
+                home with my three children. Today, that's exactly what I do. Everything you see below is
+                something I designed and built myself, and I'd love to help you build something you’re proud of.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+    <div class="project-subheader">
+        <h2>Here are some of my projects</h2>
+    </div>
+
+    <!-- Scroll Navigation Wrapper -->
+    <div class="scroll-wrapper">
+        <!-- Left Arrow Button -->
+        <button class="scroll-btn scroll-btn-left" id="scrollLeft" aria-label="Scroll left">
+            <span class="scroll-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- Projects Viewport (hides the tiles outside the view) -->
+        <div class="project-container-tile" id="horizontal-scroll">
+            <!-- Projects Track (slides left and right) -->
+            <div class="project-track" id="project-track">
+                <div class="project-tile">
+                    <a href="https://herbalharmonywithholistichealing.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/HerbalHarmWholisticHealingLLC.png" alt="Herbal Harmony with Holistic Healing, LLC screenshot of home website page.">
+                        <p class="project-title">
+                            <span>Herbal Harmony — E-commerce Website</span>
+                        </p>
+                        <p class="project-desc">
+                            A full online store for a holistic wellness business, with secure Stripe
+                            checkout, customer accounts, promo codes and a newsletter signup.
+                        </p>
+                        <ul class="project-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Stripe</li>
+                            <li>MongoDB</li>
+                            <li>Netlify</li>
+                        </ul>
+                    </a>
+                </div>
+
+                <div class="project-tile">
+                    <a href="https://reye1195.github.io/short-story-generator/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/ShortStoryGenerator.png" alt="Short Story Generator Project">
+                        <p class="project-title">
+                            <span>Short Story Generator</span>
+                        </p>
+                        <p class="project-desc">
+                            An interactive story builder: pick a genre, click any underlined word to swap it,
+                            and generate a brand-new story.
+                        </p>
+                        <ul class="project-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </a>
+                </div>
+
+                <div class="project-tile">
+                    <a href="https://reye1195.github.io/Tribute_DeVore/" target="_blank" rel="noopener noreferrer">
+                        <img src="Images/Tribute_DeVore.png" alt="Tribute DeVore Project">
+                        <p class="project-title">
+                            <span>Tribute Page</span>
+                        </p>
+                        <p class="project-desc">
+                            A celebration of my grandmother’s life, designed around her favorite colors
+                            and told through her own words and photos.
+                        </p>
+                        <ul class="project-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </a>
+                </div>
+
+                <div class="project-tile">
+                    <a href="https://reye1195.github.io/Basic_Calendar/" target="_blank" rel="noopener noreferrer">
+                        <img class="thumb-center" src="Images/Dynamic_Calendar.png" alt="Calendar Project">
+                        <p class="project-title">
+                            <span>Calendar</span>
+                        </p>
+                        <p class="project-desc">
+                            A dynamic monthly calendar that builds each month on the fly, highlights today,
+                            and lets you browse forward and back.
+                        </p>
+                        <ul class="project-tags">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Arrow Button -->
+        <button class="scroll-btn scroll-btn-right" id="scrollRight" aria-label="Scroll right">
+            <span class="scroll-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<!-- Remove "hidden" below once you have real client testimonials to show.
+     To add a testimonial, copy one whole <figure class="testimonial-card"> block and fill it in. -->
+<section id="testimonials" class="testimonials-section" hidden>
+    <div class="testimonials-header">
+        <h2>What my clients say</h2>
+    </div>
+
+    <div class="testimonial-container">
+        <figure class="testimonial-card">
+            <i class="fa-solid fa-quote-left testimonial-icon" aria-hidden="true"></i>
+            <blockquote class="testimonial-quote">
+                <p>[Client's words from the survey go here.]</p>
+            </blockquote>
+            <figcaption class="testimonial-credit">
+                <span class="testimonial-name">[Client name]</span>
+                <span class="testimonial-project">[Project or business]</span>
+            </figcaption>
+        </figure>
+    </div>
+
+    <p class="testimonial-cta">
+        Worked with me? <a href="https://survey.wisteriacode.com/" target="_blank" rel="noopener noreferrer">Share your feedback</a>
+    </p>
+</section>
+
+<!-- Background Wrapper Section -->
+<div class="background-wrapper">
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+
+        <div class="contact-title">
+            <h2>Ready to bring your visions to life?</h2>
+            <h3>
+                <a class="schedule-link"
+                   href="mailto:msellis.dev@outlook.com?subject=Project%20Inquiry&body=Hi%20Reyna%2C%0A%0AI%27d%20love%20to%20schedule%20a%20meeting%20about%20a%20project.%0A%0AName%3A%0ABusiness%3A%0AWhat%20I%27m%20looking%20for%3A%0ADays%2Ftimes%20that%20work%20for%20me%3A%0A">
+                    Schedule a meeting today!
+                </a>
+            </h3>
+            <p>Reyna Ellis</p>
+            <p>Full-Stack Developer</p>
+            <div class="links">
+                <a id="profile-link" href="https://github.com/ReyE1195" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> See my code on GitHub
+                </a>
+                <a href="mailto:msellis.dev@outlook.com" rel="noopener noreferrer">
+                    <i class="fa-regular fa-envelope"></i>msellis.dev@outlook.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; <span id="year"></span> Wisteria Code. All rights reserved.</p>
+    </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
