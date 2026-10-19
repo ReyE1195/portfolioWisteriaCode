@@ -16,8 +16,7 @@
     <ul class="nav-list">
         <li><a href="#welcome-section">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <!-- Uncomment this link when you remove "hidden" from the Testimonials section -->
-        <!-- <li><a href="#testimonials">Testimonials</a></li> -->
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
@@ -141,12 +140,17 @@
 </section>
 
 <!-- Testimonials Section -->
-<!-- Remove "hidden" below once you have real client testimonials to show.
-     To add a testimonial, copy one whole <figure class="testimonial-card"> block and fill it in. -->
-<section id="testimonials" class="testimonials-section" hidden>
+<section id="testimonials" class="testimonials-section">
     <div class="testimonials-header">
-        <h2>What my clients say</h2>
+        <h2>Client Feedback</h2>
+        <p class="testimonial-intro">Worked with me? I'd love to hear about your experience.</p>
     </div>
+
+    <!-- WHEN FIRST REAL TESTIMONIAL COMES IN:
+         1. Remove the comment marks around the block below (in WebStorm, select it and press Ctrl + /).
+         2. Replace the bracketed text with the client's words, name, and business.
+         3. For each new testimonial, copy one whole <figure class="testimonial-card"> block
+            and paste it inside the same testimonial-container.
 
     <div class="testimonial-container">
         <figure class="testimonial-card">
@@ -160,9 +164,12 @@
             </figcaption>
         </figure>
     </div>
+    -->
 
     <p class="testimonial-cta">
-        Worked with me? <a href="https://survey.wisteriacode.com/" target="_blank" rel="noopener noreferrer">Share your feedback</a>
+        <a class="feedback-btn" href="https://survey.wisteriacode.com/" target="_blank" rel="noopener noreferrer">
+            Share your feedback
+        </a>
     </p>
 </section>
 

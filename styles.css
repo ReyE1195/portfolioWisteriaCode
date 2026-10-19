@@ -325,7 +325,7 @@ body {
 /* Testimonials Section */
 .testimonials-section {
     width: 100%;
-    min-height: 60vh;
+    min-height: 40vh;
     padding: 4rem 5%;
     display: flex;
     flex-direction: column;
@@ -335,9 +335,17 @@ body {
     background: linear-gradient(var(--deep-purple), var(--midnight-violet));
 }
 
-/* Keeps the section hidden while the "hidden" attribute is on it */
+/* Keeps the section hidden if the "hidden" attribute is ever added back */
 .testimonials-section[hidden] {
     display: none;
+}
+
+.testimonials-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 
 .testimonials-header h2 {
@@ -345,6 +353,13 @@ body {
     font-size: clamp(2.2rem, 6vw, 4rem); /* scales with screen width: min, preferred, max */
     color: var(--morning-wisteria);
     text-align: center;
+}
+
+.testimonial-intro {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 1.5rem;
+    color: var(--lavender-veil);
+    max-width: 700px;
 }
 
 .testimonial-container {
@@ -418,21 +433,32 @@ body {
     font-family: "Libre Caslon Condensed", serif;
     font-size: 1.4rem;
     text-align: center;
-    color: var(--morning-wisteria);
 }
 
-.testimonial-cta a {
-    color: inherit;
+/* Gold "Share your feedback" button */
+.feedback-btn {
+    display: inline-block;
+    padding: 0.85rem 2.25rem;
+    border: 2px solid var(--wisteria-gold);
+    border-radius: 999px;
+    background-color: var(--wisteria-gold);
+    color: var(--midnight-violet);
+    font-family: "Libre Caslon Condensed", serif;
     font-weight: bold;
-    text-decoration: underline;
-    text-decoration-color: var(--wisteria-gold);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 6px;
-    transition: color 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.testimonial-cta a:hover {
+.feedback-btn:hover {
+    background-color: transparent;
     color: var(--wisteria-gold);
+    transform: translateY(-3px);
+}
+
+.feedback-btn:focus-visible {
+    outline: 2px solid var(--lavender-veil);
+    outline-offset: 4px;
 }
 
 /* Background Wrapper Section */
@@ -730,6 +756,10 @@ footer {
         font-size: 1.8rem;
     }
 
+    .testimonial-intro {
+        font-size: 1.3rem;
+    }
+
     .testimonial-quote p {
         font-size: 1.25rem;
     }
@@ -821,8 +851,12 @@ footer {
     }
 
     .testimonials-section {
-        min-height: 50vh;
+        min-height: 35vh;
         padding: 3rem 5%;
+    }
+
+    .testimonial-intro {
+        font-size: 1.2rem;
     }
 
     .testimonial-container {
@@ -928,9 +962,13 @@ footer {
     }
 
     .testimonials-section {
-        min-height: 40vh;
+        min-height: 30vh;
         padding: 2rem 5%;
         gap: 1.5rem;
+    }
+
+    .testimonial-intro {
+        font-size: 1.05rem;
     }
 
     .testimonial-container {
@@ -956,6 +994,10 @@ footer {
 
     .testimonial-cta {
         font-size: 1.05rem;
+    }
+
+    .feedback-btn {
+        padding: 0.7rem 1.75rem;
     }
 
     .contact-section {
