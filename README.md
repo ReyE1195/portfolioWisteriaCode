@@ -67,7 +67,7 @@ Then open `index.html` in your browser. No installation or build step is needed.
 
 - **GitHub:** [ReyE1195](https://github.com/ReyE1195)
 - **Email:** [msellis.dev@outlook.com](mailto:msellis.dev@outlook.com)
-- **Fiverr:** [Add your Fiverr profile link here]
+- **Fiverr:** [raellisdev](https://www.fiverr.com/raellisdev)
 
 ---
 
