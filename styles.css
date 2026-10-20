@@ -46,10 +46,26 @@ body {
     width: 100%;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 2rem;
+    text-decoration: none;
+}
+
 .nav-logo {
     width: auto;
-    height: 80px;
-    margin-left: 2rem;
+    height: 70px;
+    border-radius: 8px;
+}
+
+.nav-brand-name {
+    font-family: "Libre Caslon Condensed", serif;
+    font-size: 1.9rem;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    color: var(--wisteria-gold);
 }
 
 .nav-list {
@@ -362,12 +378,104 @@ body {
     max-width: 700px;
 }
 
+/* Each card is capped at 600px wide to match the project cards,
+   and the cards stay centered whether there is one or several */
 .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 600px));
+    justify-content: center;
     gap: 2rem;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1400px;
+}
+
+/* Testimonial Carousel */
+.testimonial-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 760px;
+}
+
+/* Stacks every card in the same spot, so the carousel is as tall as the
+   longest review and the page doesn't jump when cards change */
+.testimonial-viewport {
+    display: grid;
+    flex: 1;
+    max-width: 600px;
+}
+
+.testimonial-viewport .testimonial-card {
+    grid-area: 1 / 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-viewport .testimonial-card.is-active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dots under the carousel */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: -1rem;
+}
+
+.testimonial-dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 2px solid var(--wisteria-gold);
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-dot:hover {
+    transform: scale(1.2);
+}
+
+.testimonial-dot[aria-current="true"] {
+    background-color: var(--wisteria-gold);
+}
+
+/* Testimonial arrows: gold to match the dots, quotes, and button. */
+.testimonial-carousel .scroll-btn {
+    background-color: transparent;
+    border: 2px solid var(--wisteria-gold);
+}
+
+.testimonial-carousel .scroll-icon {
+    background-color: var(--wisteria-gold);
+}
+
+.testimonial-carousel .scroll-btn:hover {
+    background-color: var(--wisteria-gold);
+}
+
+.testimonial-carousel .scroll-btn:hover .scroll-icon {
+    background-color: var(--midnight-violet);
+}
+
+/* Lets testimonials.js hide the arrows, dots, or carousel when they're not needed */
+.testimonial-carousel[hidden],
+.testimonial-dots[hidden],
+.testimonial-carousel .scroll-btn[hidden] {
+    display: none;
+}
+
+/* Visitors who turn off animations in their device settings get instant changes */
+@media (prefers-reduced-motion: reduce) {
+    .testimonial-viewport .testimonial-card {
+        transition: none;
+    }
 }
 
 .testimonial-card {
@@ -376,12 +484,12 @@ body {
     gap: 1.25rem;
     margin: 0;
     padding: 2rem;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: rgba(255, 255, 255, 0.025);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    border: 1px solid rgba(212, 175, 55, 0.15);
     border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -393,6 +501,11 @@ body {
 .testimonial-icon {
     font-size: 2rem;
     color: var(--wisteria-gold);
+}
+
+.testimonial-icon-end {
+    align-self: flex-end;
+    margin-top: -1rem;
 }
 
 .testimonial-quote {
@@ -781,9 +894,17 @@ footer {
         margin-top: 70px;
     }
 
-    .nav-logo {
-        height: 70px;
+    .nav-brand {
         margin-left: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .nav-logo {
+        height: 55px;
+    }
+
+    .nav-brand-name {
+        font-size: 1.3rem;
     }
 
     .welcome-content {
@@ -888,9 +1009,16 @@ footer {
         margin-top: 60px;
     }
 
-    .nav-logo {
-        height: 60px;
+    .nav-brand {
         margin-left: 1rem;
+    }
+
+    .nav-logo {
+        height: 50px;
+    }
+
+    .nav-brand-name {
+        display: none;
     }
 
     .welcome-content {
@@ -969,6 +1097,10 @@ footer {
 
     .testimonial-intro {
         font-size: 1.05rem;
+    }
+
+    .testimonial-carousel {
+        gap: 0.5rem;
     }
 
     .testimonial-container {

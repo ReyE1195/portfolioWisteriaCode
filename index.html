@@ -12,7 +12,11 @@
 <body>
 <!-- NavBar Section -->
 <nav id="navbar" class="navbar-section">
-    <img class="nav-logo" src="Images/Background_CropLogo.png" alt="Wisteria Code Logo">
+    <!-- Logo + business name (clicking it returns to the top) -->
+    <a class="nav-brand" href="#welcome-section">
+        <img class="nav-logo" src="Images/Upscale_Logo2.png" alt="Business Logo without title">
+        <span class="nav-brand-name">Wisteria Code</span>
+    </a>
     <ul class="nav-list">
         <li><a href="#welcome-section">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -143,28 +147,53 @@
 <section id="testimonials" class="testimonials-section">
     <div class="testimonials-header">
         <h2>Client Feedback</h2>
-        <p class="testimonial-intro">Worked with me? I'd love to hear about your experience.</p>
+        <p class="testimonial-intro">Every review helps another small business find the right developer.</p>
     </div>
 
-    <!-- WHEN FIRST REAL TESTIMONIAL COMES IN:
-         1. Remove the comment marks around the block below (in WebStorm, select it and press Ctrl + /).
-         2. Replace the bracketed text with the client's words, name, and business.
-         3. For each new testimonial, copy one whole <figure class="testimonial-card"> block
-            and paste it inside the same testimonial-container.
+    <!-- Testimonial Carousel
+         Shows one card at a time and fades to the next one automatically.
+         - 0 cards: the carousel hides itself, so only the title and button show.
+         - 1 card: the card shows with no arrows or dots.
+         - 2+ cards: arrows, dots, and autorotation turn on.
 
-    <div class="testimonial-container">
+         TO ADD A REAL TESTIMONIAL: copy the template below, paste it inside
+         testimonial-viewport, remove the comment marks, and fill in the brackets.
+
         <figure class="testimonial-card">
             <i class="fa-solid fa-quote-left testimonial-icon" aria-hidden="true"></i>
             <blockquote class="testimonial-quote">
                 <p>[Client's words from the survey go here.]</p>
             </blockquote>
+            <i class="fa-solid fa-quote-right testimonial-icon testimonial-icon-end" aria-hidden="true"></i>
             <figcaption class="testimonial-credit">
                 <span class="testimonial-name">[Client name]</span>
                 <span class="testimonial-project">[Project or business]</span>
             </figcaption>
         </figure>
-    </div>
     -->
+    <div class="testimonial-carousel" id="testimonial-carousel"
+         role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+
+        <!-- Left Arrow Button (same style as the project arrows) -->
+        <button class="scroll-btn scroll-btn-left" id="testimonialPrev" aria-label="Previous testimonial">
+            <span class="scroll-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- Cards are stacked here; only the active one is visible -->
+        <div class="testimonial-viewport" id="testimonial-viewport" aria-live="polite">
+
+           <!-- Add testimonial's here -->
+
+        </div>
+
+        <!-- Right Arrow Button -->
+        <button class="scroll-btn scroll-btn-right" id="testimonialNext" aria-label="Next testimonial">
+            <span class="scroll-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- Dots are created automatically by testimonials.js -->
+    <div class="testimonial-dots" id="testimonial-dots"></div>
 
     <p class="testimonial-cta">
         <a class="feedback-btn" href="https://survey.wisteriacode.com/" target="_blank" rel="noopener noreferrer">
@@ -206,5 +235,6 @@
     </footer>
 </div>
 <script src="script.js"></script>
+<script src="testimonials.js"></script>
 </body>
 </html>
